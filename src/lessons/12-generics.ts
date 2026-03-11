@@ -5,6 +5,9 @@ export {};
  * 
  * Goal:
  * Learn how to create reusable, flexible components using Generics.
+ * 
+ * How to run:
+ * npm run lesson:12
  */
 
 /**

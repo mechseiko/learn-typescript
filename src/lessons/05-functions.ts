@@ -5,6 +5,9 @@ export {};
  * 
  * Goal:
  * Learn how to type function parameters and return values.
+ * 
+ * How to run:
+ * npm run lesson:05
  */
 
 /**

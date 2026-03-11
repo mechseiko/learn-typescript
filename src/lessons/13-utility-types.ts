@@ -5,6 +5,9 @@ export {};
  * 
  * Goal:
  * Learn how to transform existing types using Partial, Required, Readonly, Pick, Omit, and Record.
+ * 
+ * How to run:
+ * npm run lesson:13
  */
 
 /**

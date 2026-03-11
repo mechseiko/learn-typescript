@@ -5,6 +5,9 @@ export {};
  * 
  * Goal:
  * Learn how to tell TypeScript you know more about a type than it does using 'as'.
+ * 
+ * How to run:
+ * npm run lesson:15
  */
 
 /**

@@ -5,6 +5,9 @@ export {};
  * 
  * Goal:
  * Learn how to type arrays and fixed-length tuples.
+ * 
+ * How to run:
+ * npm run lesson:03
  */
 
 /**

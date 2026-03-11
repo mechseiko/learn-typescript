@@ -1,6 +1,6 @@
 # 🚀 Learn Typescript: The 20-Lesson Roadmap
 
-Welcome to your hands-on TypeScript learning environment! This repository is designed specifically for **frontend developers** migrating from JavaScript.
+Welcome to your hands-on TypeScript learning environment!
 
 Instead of reading long documentation, you'll learn by **doing**. Each lesson is a `.ts` file in `src/lessons/` filled with explanations, examples, and challenges.
 

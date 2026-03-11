@@ -5,6 +5,9 @@ export {};
  * 
  * Goal:
  * Learn how to combine multiple types using | (Union) and & (Intersection).
+ * 
+ * How to run:
+ * npm run lesson:08
  */
 
 /**

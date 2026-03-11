@@ -5,6 +5,9 @@ export {};
  * 
  * Goal:
  * Master complex function signatures, overloads, and special return types.
+ * 
+ * How to run:
+ * npm run lesson:06
  */
 
 /**

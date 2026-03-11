@@ -5,6 +5,9 @@ export {};
  * 
  * Goal:
  * Master the primitive types: string, number, boolean, null, undefined, any, and unknown.
+ * 
+ * How to run:
+ * npm run lesson:02
  */
 
 /**

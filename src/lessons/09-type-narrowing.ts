@@ -5,6 +5,9 @@ export {};
  * 
  * Goal:
  * Learn how to use guards like typeof, in, and instanceof to refine types.
+ * 
+ * How to run:
+ * npm run lesson:09
  */
 
 /**

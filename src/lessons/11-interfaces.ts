@@ -5,6 +5,9 @@ export {};
  * 
  * Goal:
  * Learn how to use interfaces to define object shapes and how they relate to type aliases.
+ * 
+ * How to run:
+ * npm run lesson:11
  */
 
 /**

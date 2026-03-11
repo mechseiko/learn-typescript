@@ -1,7 +1,7 @@
 {
   "name": "learn-typescript",
   "version": "1.0.0",
-  "description": "An interactive learning environment for developers migrating to TypeScript.",
+  "description": "An interactive typescript learning environment for developers.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

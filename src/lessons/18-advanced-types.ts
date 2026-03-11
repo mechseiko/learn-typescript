@@ -5,6 +5,9 @@ export {};
  * 
  * Goal:
  * Master 'keyof', 'typeof', indexed access types, and mapped types.
+ * 
+ * How to run:
+ * npm run lesson:18
  */
 
 /**

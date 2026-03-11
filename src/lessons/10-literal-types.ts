@@ -5,6 +5,9 @@ export {};
  * 
  * Goal:
  * Learn how to use specific values as types (Literal Types).
+ * 
+ * How to run:
+ * npm run lesson:10
  */
 
 /**

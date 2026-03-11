@@ -4,6 +4,9 @@
  * 
  * Goal:
  * Learn how to organize code using exports and imports.
+ * 
+ * How to run:
+ * npm run lesson:16
  */
 
 /**

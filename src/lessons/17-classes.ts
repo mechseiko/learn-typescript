@@ -5,6 +5,9 @@ export {};
  * 
  * Goal:
  * Learn how to type classes, use access modifiers, and implement interfaces.
+ * 
+ * How to run:
+ * npm run lesson:17
  */
 
 /**

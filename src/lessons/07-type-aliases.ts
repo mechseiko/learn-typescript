@@ -5,6 +5,9 @@ export {};
  * 
  * Goal:
  * Learn how to create reusable, complex type definitions using aliases.
+ * 
+ * How to run:
+ * npm run lesson:07
  */
 
 /**

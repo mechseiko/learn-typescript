@@ -5,6 +5,9 @@ export {};
  * 
  * Goal:
  * Learn how to type objects and understand how TypeScript infers types automatically.
+ * 
+ * How to run:
+ * npm run lesson:04
  */
 
 /**

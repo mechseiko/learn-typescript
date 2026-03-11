@@ -5,6 +5,9 @@ export {};
  * 
  * Goal:
  * Learn how to handle type definitions for external libraries using @types.
+ * 
+ * How to run:
+ * npm run lesson:19
  */
 
 /**

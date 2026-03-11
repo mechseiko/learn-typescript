@@ -5,6 +5,9 @@ export {};
  * 
  * Goal:
  * Learn how to structure and apply all TypeScript concepts in a real project.
+ * 
+ * How to run:
+ * npm run lesson:20
  */
 
 /**

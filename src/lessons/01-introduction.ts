@@ -6,6 +6,9 @@ export {};
  * 
  * Goal: 
  * Understand what TypeScript is, why it exists, and get your first code running.
+ * 
+ * How to run:
+ * npm run lesson:01
  */
 
 /**

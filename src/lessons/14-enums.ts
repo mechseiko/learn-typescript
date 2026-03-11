@@ -5,6 +5,9 @@ export {};
  * 
  * Goal:
  * Learn how to define a set of named constants using Enums and when to use alternatives.
+ * 
+ * How to run:
+ * npm run lesson:14
  */
 
 /**
