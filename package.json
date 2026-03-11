@@ -5,16 +5,26 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lesson:01": "ts-node lessons/01-basic-types.ts",
-    "lesson:02": "ts-node lessons/02-interfaces-types.ts",
-    "lesson:03": "ts-node lessons/03-functions.ts",
-    "lesson:04": "ts-node lessons/04-unions-enums.ts",
-    "lesson:05": "ts-node lessons/05-generics.ts",
-    "lesson:06": "ts-node lessons/06-utility-types.ts",
-    "lesson:07": "ts-node lessons/07-type-guarding.ts",
-    "lesson:08": "ts-node lessons/08-classes.ts",
-    "lesson:09": "ts-node lessons/09-real-world-patterns.ts",
-    "lesson:10": "ts-node lessons/10-real-world-example.ts",
+    "lesson:01": "ts-node src/lessons/01-introduction.ts",
+    "lesson:02": "ts-node src/lessons/02-basic-types.ts",
+    "lesson:03": "ts-node src/lessons/03-arrays-tuples.ts",
+    "lesson:04": "ts-node src/lessons/04-objects-inference.ts",
+    "lesson:05": "ts-node src/lessons/05-functions.ts",
+    "lesson:06": "ts-node src/lessons/06-adv-functions.ts",
+    "lesson:07": "ts-node src/lessons/07-type-aliases.ts",
+    "lesson:08": "ts-node src/lessons/08-unions-intersections.ts",
+    "lesson:09": "ts-node src/lessons/09-type-narrowing.ts",
+    "lesson:10": "ts-node src/lessons/10-literal-types.ts",
+    "lesson:11": "ts-node src/lessons/11-interfaces.ts",
+    "lesson:12": "ts-node src/lessons/12-generics.ts",
+    "lesson:13": "ts-node src/lessons/13-utility-types.ts",
+    "lesson:14": "ts-node src/lessons/14-enums.ts",
+    "lesson:15": "ts-node src/lessons/15-type-assertions.ts",
+    "lesson:16": "ts-node src/lessons/16-modules.ts",
+    "lesson:17": "ts-node src/lessons/17-classes.ts",
+    "lesson:18": "ts-node src/lessons/18-advanced-types.ts",
+    "lesson:19": "ts-node src/lessons/19-libraries.ts",
+    "lesson:20": "ts-node src/lessons/20-real-projects.ts",
     "check": "tsc --noEmit"
   },
   "keywords": [
@@ -27,6 +37,7 @@
   "license": "ISC",
   "devDependencies": {
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "@types/node": "^20.11.16"
   }
 }
