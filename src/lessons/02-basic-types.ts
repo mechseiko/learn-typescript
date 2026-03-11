@@ -18,7 +18,7 @@ export {};
 /**
  * BASIC EXAMPLE
  */
-let myName: string = "Abdul";
+let myName: string = "mechseiko";
 let myAge: number = 30;
 let isStudent: boolean = false;
 let empty: null = null;
@@ -31,7 +31,9 @@ let notSet: undefined = undefined;
 let apiData: unknown = "Some data from a server";
 
 if (typeof apiData === "string") {
-    console.log(apiData.toUpperCase());
+    console.log('apiData is a string', apiData.toUpperCase());
+} else if (typeof apiData === "number"){
+    console.log('apiData is a number')
 }
 
 /**
@@ -41,7 +43,7 @@ let userId: any = 123;
 userId = "abc"; // ✅ 'any' allows everything (avoid this!)
 
 let safeId: unknown = 456;
-// safeId.toFixed(); // ❌ Error: Object is of type 'unknown'.
+// safeId.toFixed(); // ❌ Error: safeId is of type 'unknown'.
 
 /**
  * PRACTICE CHALLENGES

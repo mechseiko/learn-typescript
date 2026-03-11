@@ -42,7 +42,12 @@ const myConfig: Config = {
 /**
  * COMMON MISTAKES
  */
-const person = { name: "John" };
+
+interface User {
+    name: string;
+    dob?: string
+}
+const person: User = {name: 'tunde'};
 // person.age = 30; // ❌ Error: Property 'age' does not exist on type '{ name: string; }'
 
 /**

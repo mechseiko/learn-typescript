@@ -36,7 +36,7 @@ const newWorker: Worker = {
  * FRONTEND EXAMPLE
  */
 type LoadingState = { state: "loading" };
-type SuccessState = { state: "success"; data: string[] };
+type SuccessState = { state: "success"; data: string[], logs: number[] };
 type ErrorState = { state: "error"; message: string };
 
 type NetworkState = LoadingState | SuccessState | ErrorState;
@@ -52,7 +52,7 @@ function handleState(status: NetworkState) {
  */
 type A = { x: number };
 type B = { y: number };
-type C = A & B;
+type C = A & B
 
 // const invalid: C = { x: 1 }; // ❌ Error: Property 'y' is missing!
 

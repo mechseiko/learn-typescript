@@ -20,7 +20,7 @@ export {};
 /**
  * BASIC EXAMPLE
  */
-let message = "Hello World!";
+let message: string = "Hello World!";
 console.log(message);
 
 // In TS, we can also be explicit:

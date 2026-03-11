@@ -31,13 +31,20 @@ type User = {
     username: string;
     email: string;
     isActive: boolean;
-};
+} | {
+    id: ID;
+    isAdmin: true
+}
 
 const currentUser: User = {
     id: 1,
     username: "abdul_s",
     email: "abdul@example.com",
     isActive: true
+};
+const adminUser: User = {
+    id: 1,
+    isAdmin: true
 };
 
 /**
