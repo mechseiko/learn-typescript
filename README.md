@@ -1,4 +1,4 @@
-# 🚀 Learn Typescript: The 20-Lesson Roadmap
+# Learn Typescript
 
 Welcome to your hands-on TypeScript learning environment!
 
@@ -23,7 +23,6 @@ To get started, make sure you have [Node.js](https://nodejs.org/) installed, the
    ```bash
    npm run lesson:01
    ```
-   Then open `index.js` to see the compiled javascript code.
 
 ## 📚 The Curriculum Roadmap
 
