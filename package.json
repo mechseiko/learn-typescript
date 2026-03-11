@@ -1,0 +1,32 @@
+{
+  "name": "learn-typescript",
+  "version": "1.0.0",
+  "description": "An interactive learning environment for developers migrating to TypeScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lesson:01": "ts-node lessons/01-basic-types.ts",
+    "lesson:02": "ts-node lessons/02-interfaces-types.ts",
+    "lesson:03": "ts-node lessons/03-functions.ts",
+    "lesson:04": "ts-node lessons/04-unions-enums.ts",
+    "lesson:05": "ts-node lessons/05-generics.ts",
+    "lesson:06": "ts-node lessons/06-utility-types.ts",
+    "lesson:07": "ts-node lessons/07-type-guarding.ts",
+    "lesson:08": "ts-node lessons/08-classes.ts",
+    "lesson:09": "ts-node lessons/09-real-world-patterns.ts",
+    "lesson:10": "ts-node lessons/10-real-world-example.ts",
+    "check": "tsc --noEmit"
+  },
+  "keywords": [
+    "typescript",
+    "learning",
+    "tutorial",
+    "frontend"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
