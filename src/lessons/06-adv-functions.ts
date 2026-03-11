@@ -66,3 +66,10 @@ function processValue(val: string): number {
 
 
 console.log("Lesson 06 Complete! 🚀");
+
+/**
+ * --- SOLUTIONS ---
+ */
+// 1. type Operation = (a: number, b: number) => number;
+// 2. function logout(): void { console.log("User logged out"); }
+// 3. function format(val: string | number): string { return val.toString(); }

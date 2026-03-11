@@ -68,3 +68,10 @@ type AlternativeStatus = "active" | "inactive";
 
 
 console.log("Lesson 14 Complete! 🚀");
+
+/**
+ * --- SOLUTIONS ---
+ */
+// 1. enum Response { Yes, No, Maybe }
+// 2. enum LogLevel { Info = "INFO", Warn = "WARN", Error = "ERROR" }
+// 3. console.log(Fruit.Apple);

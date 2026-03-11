@@ -56,3 +56,10 @@ export default config;
 
 
 console.log("Lesson 16 Complete! 🚀");
+
+/**
+ * --- SOLUTIONS ---
+ */
+// 1. export interface Task { ... }
+// 2. export function add(a: number, b: number) { ... }
+// 3. import type { User } from "./types";

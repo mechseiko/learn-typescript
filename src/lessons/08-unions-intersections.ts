@@ -70,3 +70,10 @@ type C = A & B;
 
 
 console.log("Lesson 08 Complete! 🚀");
+
+/**
+ * --- SOLUTIONS ---
+ */
+// 1. type StringOrBoolean = string | boolean;
+// 2. type AdminUser = { name: string } & { canEdit: boolean };
+// 3. let val: string | string[];

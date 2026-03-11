@@ -60,3 +60,10 @@ type Point = { x: number; y: number };
 
 
 console.log("Lesson 07 Complete! 🚀");
+
+/**
+ * --- SOLUTIONS ---
+ */
+// 1. type Coordinate = { lat: number; lng: number };
+// 2. type Status = "online" | "offline" | "busy";
+// 3. type Product = { name: string; price: number; description?: string };

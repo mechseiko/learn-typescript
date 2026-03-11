@@ -66,4 +66,12 @@ Each file follows a standard format:
 6. **Practice Challenges**: Your turn to write code!
 
 ---
+## 🤝 Contributing & Issues
+
+We want to make this the best TypeScript resource for beginners! 
+
+- **Found a bug?** Open an [issue](https://github.com/mechseiko/learn-typescript/issues).
+- **Want to help?** Check out our [Contributing Guide](./CONTRIBUTING.md).
+- **Suggestions?** We'd love to hear your ideas for new lessons or better examples!
+
 Happy Coding! 💻

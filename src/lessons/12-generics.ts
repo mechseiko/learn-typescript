@@ -66,3 +66,10 @@ function getLengthSafe<T extends { length: number }>(arg: T) {
 
 
 console.log("Lesson 12 Complete! 🚀");
+
+/**
+ * --- SOLUTIONS ---
+ */
+// 1. function wrapInArray<T>(val: T): T[] { return [val]; }
+// 2. interface Box<T> { content: T; }
+// 3. function first<T>(arr: T[]): T { return arr[0]; }

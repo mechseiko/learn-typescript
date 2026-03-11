@@ -61,3 +61,10 @@ const myDog: Dog = {
 
 
 console.log("Lesson 11 Complete! 🚀");
+
+/**
+ * --- SOLUTIONS ---
+ */
+// 1. interface Product { id: number; name: string; price: number; }
+// 2. interface Electronic extends Product { voltage: number; }
+// 3. interface Dimensions { width: number; height: number; }

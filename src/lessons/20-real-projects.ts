@@ -72,3 +72,10 @@ class ShoppingCart {
 
 
 console.log("\nCongratulations! You've finished the 20-lesson TypeScript journey! 🎉🚀");
+
+/**
+ * --- SOLUTIONS ---
+ */
+// 1. interface Storage<T> { ... }
+// 2. type UIEvent = "click" | "submit" | "change";
+// 3. type Action = { type: string; payload: any }; type State = { ... };

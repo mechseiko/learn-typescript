@@ -57,3 +57,11 @@ let safeId: unknown = 456;
 
 
 console.log("Lesson 02 Complete! 🚀");
+
+/**
+ * --- SOLUTIONS ---
+ */
+// 1. let anyValue: any = "Whatever";
+// 2. let unknownValue: unknown = 42;
+//    if (typeof unknownValue === "number") { console.log(unknownValue.toFixed()); }
+// 3. let myNull: null = null; let myUndefined: undefined = undefined;

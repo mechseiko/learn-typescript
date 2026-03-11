@@ -54,3 +54,10 @@ let currentMode: "light" | "dark" = "light";
 
 
 console.log("Lesson 10 Complete! 🚀");
+
+/**
+ * --- SOLUTIONS ---
+ */
+// 1. type Theme = "light" | "dark" | "system";
+// 2. type HTTPMethod = "GET" | "POST" | "PUT" | "DELETE";
+// 3. function getSize(s: "S" | "M" | "L"): number { return s === "S" ? 1 : 2; }

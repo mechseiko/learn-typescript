@@ -62,3 +62,10 @@ const user: ReadonlyUser = { id: 1, name: "A", email: "a@a.com" };
 
 
 console.log("Lesson 13 Complete! 🚀");
+
+/**
+ * --- SOLUTIONS ---
+ */
+// 1. type PartialProduct = Partial<Product>;
+// 2. type ContactInfo = Pick<User, "email" | "phone">;
+// 3. type CategoryMap = Record<string, string[]>;

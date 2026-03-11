@@ -66,3 +66,10 @@ function printLen(val: string | null) {
 
 
 console.log("Lesson 09 Complete! 🚀");
+
+/**
+ * --- SOLUTIONS ---
+ */
+// 1. function check(v: string | boolean) { if (typeof v === "string") ... }
+// 2. if ("price" in obj) { ... }
+// 3. if (val instanceof Admin) { ... }

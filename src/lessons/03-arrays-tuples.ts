@@ -57,3 +57,11 @@ let items: string[] = ["apple", "banana"];
 
 
 console.log("Lesson 03 Complete! 🚀");
+
+/**
+ * --- SOLUTIONS ---
+ */
+// 1. let scores: number[] = [90, 85, 100];
+// 2. let product: [string, number] = ["Keyboard", 150];
+// 3. let strings: string[] = ["a"]; 
+//    strings.push(1); // ❌ Error

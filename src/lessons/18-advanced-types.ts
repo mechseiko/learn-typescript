@@ -63,3 +63,10 @@ const colors = { red: "#ff0000", blue: "#0000ff" };
 
 
 console.log("Lesson 18 Complete! 🚀");
+
+/**
+ * --- SOLUTIONS ---
+ */
+// 1. type UserKeys = keyof User;
+// 2. type MyType = typeof myObj;
+// 3. type MyPartial<T> = { [P in keyof T]?: T[P] };

@@ -53,3 +53,10 @@ function greet(name: string) {
 
 
 console.log("Lesson 05 Complete! 🚀");
+
+/**
+ * --- SOLUTIONS ---
+ */
+// 1. function multiply(a: number, b: number): number { return a * b; }
+// 2. function getFullName(f: string, l: string): string { return `${f} ${l}`; }
+// 3. function checkLogin(isLogged: boolean): string { return isLogged ? "Welcome" : "Please log in"; }

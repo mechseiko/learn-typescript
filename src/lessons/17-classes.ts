@@ -78,3 +78,10 @@ const p = new Point(10);
 
 
 console.log("Lesson 17 Complete! 🚀");
+
+/**
+ * --- SOLUTIONS ---
+ */
+// 1. class User { private password!: string; }
+// 2. class Shape {} class Circle extends Shape {}
+// 3. class Robot implements Movable { move() {} }

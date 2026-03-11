@@ -54,3 +54,11 @@ let age: number = 25;
 
 
 console.log("Lesson 01 Complete! 🚀");
+
+/**
+ * --- SOLUTIONS ---
+ */
+// 1. let developerName: string = "Abdul";
+// 2. let isCompleted: boolean = true;
+// 3. let score: number = 100;
+// score = "A"; // ❌ Error

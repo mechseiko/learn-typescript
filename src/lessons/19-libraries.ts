@@ -51,3 +51,10 @@ export {};
 
 
 console.log("Lesson 19 Complete! 🚀");
+
+/**
+ * --- SOLUTIONS ---
+ */
+// 1. npm install --save-dev @types/react
+// 2. npm install --save-dev @types/express
+// 3. Create a .d.ts file and declare the module.

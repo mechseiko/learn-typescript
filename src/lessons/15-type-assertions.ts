@@ -51,3 +51,10 @@ let z = (x as unknown) as number;
 
 
 console.log("Lesson 15 Complete! 🚀");
+
+/**
+ * --- SOLUTIONS ---
+ */
+// 1. let n = unknownVal as number;
+// 2. const input = document.getElementById("age") as HTMLInputElement;
+// 3. console.log(possiblyNullVar!.length);

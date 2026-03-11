@@ -59,3 +59,10 @@ const person = { name: "John" };
 
 
 console.log("Lesson 04 Complete! 🚀");
+
+/**
+ * --- SOLUTIONS ---
+ */
+// 1. let car: { brand: string; year: number } = { brand: "Tesla", year: 2024 };
+// 2. interface Book { title: string; subtitle?: string; }
+// 3. interface User { readonly id: number; name: string; }
