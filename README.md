@@ -1,6 +1,6 @@
 # Learn Typescript
 
-Welcome to your hands-on TypeScript learning environment!
+Welcome to the hands-on TypeScript learning environment!
 
 Instead of reading long documentation, you'll learn by **doing**. Each lesson is a `.ts` file in `src/lessons/` filled with explanations, examples, and challenges.
 

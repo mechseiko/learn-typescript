@@ -10,6 +10,8 @@ export {};
  * npm run lesson:04
  */
 
+console.log('lesson 04-objects-inference');
+
 /**
  * You can define the shape of objects explicitly. 
  * TypeScript also "infers" types based on the values you assign.
@@ -29,15 +31,29 @@ let city = "Lagos"; // TS infers 'string'
 
 /**
  * FRONTEND EXAMPLE
+ * Objects and interfaces are heavily used to define Props in UI components (like React)
+ * or to type the data returned from an API.
  */
-interface Config {
-    readonly apiKey: string; // Cannot be changed
-    timeout?: number;        // Optional property
+interface UserProfileProps {
+    readonly userId: string; // Should not be mutated by the component
+    displayName: string;
+    avatarUrl?: string;      // Optional, might fall back to a default image
+    isActive: boolean;
 }
 
-const myConfig: Config = {
-    apiKey: "12345-ABCDE"
+const currentUser: UserProfileProps = {
+    userId: "usr_9921",
+    displayName: "MechSeiko",
+    isActive: true
+    // avatarUrl is automatically inferred as missing but valid since it's optional
 };
+
+function renderUserProfile(user: UserProfileProps) {
+    const avatar = user.avatarUrl || "/default-avatar.png";
+    console.log(`Rendering ${user.displayName} with avatar ${avatar}. Active: ${user.isActive}`);
+}
+
+renderUserProfile(currentUser);
 
 /**
  * COMMON MISTAKES
@@ -62,8 +78,6 @@ const person: User = {name: 'tunde'};
 
 // 3. Define a readonly property 'id' in a 'User' interface.
 
-
-console.log("Lesson 04 Complete! 🚀");
 
 /**
  * --- SOLUTIONS ---

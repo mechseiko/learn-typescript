@@ -10,6 +10,8 @@ export {};
  * npm run lesson:09
  */
 
+console.log('lesson 09-type-narrowing');
+
 /**
  * Narrowing is the process of moving from a broad type to a more specific type
  * using conditional checks (Type Guards).
@@ -30,17 +32,24 @@ function process(input: string | number) {
 
 /**
  * FRONTEND EXAMPLE
+ * In React/Vue, you often narrow types to decide which component to render
+ * or how to parse an incoming API payload.
  */
-interface Bird { fly: () => void }
-interface Fish { swim: () => void }
+type ApiError = { type: "ApiError"; statusCode: number; message: string };
+type NetworkError = { type: "NetworkError"; isOffline: true };
 
-function move(animal: Bird | Fish) {
-    if ("fly" in animal) {
-        animal.fly();
+type FetchError = ApiError | NetworkError;
+
+function displayErrorNotification(error: FetchError) {
+    // Narrowing using a literal discriminator ("type")
+    if (error.type === "ApiError") {
+        console.error(`Server rejected request (Code: ${error.statusCode}): ${error.message}`);
     } else {
-        animal.swim();
+        console.warn("You appear to be offline. Please check your connection.");
     }
 }
+
+displayErrorNotification({ type: "NetworkError", isOffline: true });
 
 /**
  * COMMON MISTAKES
@@ -64,8 +73,6 @@ function printLen(val: string | null) {
 
 // 3. Create a class 'Admin' and 'User', then use 'instanceof' to check a variable.
 
-
-console.log("Lesson 09 Complete! 🚀");
 
 /**
  * --- SOLUTIONS ---

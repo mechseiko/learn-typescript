@@ -10,6 +10,8 @@ export {};
  * npm run lesson:18
  */
 
+console.log('lesson 18-advanced-types');
+
 /**
  * Advanced types allow you to create dynamic and complex type relationships 
  * based on existing values or types.
@@ -26,21 +28,39 @@ type DataType = typeof data; // { id: number; name: string }
 
 /**
  * FRONTEND EXAMPLE
+ * Advanced types are heavily used by library authors (like Redux or React Router)
+ * or when building complex generic forms where fields depend on object keys.
  */
-interface AppConfig {
-    theme: "light" | "dark";
-    version: number;
+interface UserFormState {
+    username: string;
+    email: string;
+    age: number;
 }
 
-// Indexed Access Type
-type ThemeType = AppConfig["theme"]; // "light" | "dark"
+// 1. keyof: Useful for a generic update function that only accepts valid keys
+function updateField<K extends keyof UserFormState>(field: K, value: UserFormState[K]) {
+    console.log(`Updating ${field} with value: ${value}`);
+}
+updateField("username", "MechSeiko");
+// updateField("age", "30"); // ❌ Error: "30" is not a number
 
-// Mapped Type
-type ReadonlyConfig<T> = {
-    readonly [P in keyof T]: T[P];
+// 2. typeof: Useful for capturing the shape of a massive configuration object without typing it out
+const defaultThemeConfig = {
+    colors: { primary: "#000", secondary: "#fff" },
+    spacing: { m: 16, l: 24 }
 };
 
-type MyReadonlyConfig = ReadonlyConfig<AppConfig>;
+type ThemeConfig = typeof defaultThemeConfig;
+// Now ThemeConfig is strictly { colors: { primary: string, ... }, spacing: ... }
+
+// 3. Mapped Type: Creating a Validation Errors type based on form state
+type FormErrors<T> = {
+    [Key in keyof T]?: string; // Every key is optional and maps to an error string
+};
+
+const errors: FormErrors<UserFormState> = {
+    email: "Invalid email format"
+};
 
 /**
  * COMMON MISTAKES
@@ -62,7 +82,7 @@ const colors = { red: "#ff0000", blue: "#0000ff" };
 // 3. Create a mapped type that makes all properties in an interface optional (Partial implementation).
 
 
-console.log("Lesson 18 Complete! 🚀");
+
 
 /**
  * --- SOLUTIONS ---

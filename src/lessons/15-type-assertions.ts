@@ -10,6 +10,8 @@ export {};
  * npm run lesson:15
  */
 
+console.log('lesson 15-type-assertions');
+
 /**
  * Sometimes you know the type of a value better than TypeScript can infer.
  * In these cases, you can use 'Assertions'.
@@ -23,10 +25,26 @@ let strLength: number = (someValue as string).length;
 
 /**
  * FRONTEND EXAMPLE
+ * Assertions are heavily used when interacting with the DOM (since TS doesn't know your HTML),
+ * or when typing a mock object that doesn't strictly satisfy a massive interface in a test.
  */
-// Very common with DOM elements
-const myCanvas = document.getElementById("main_canvas") as HTMLCanvasElement;
-// myCanvas.getContext("2d"); // TypeScript now knows this is a canvas!
+
+// 1. DOM interactions
+const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement | null;
+if (submitBtn) {
+    submitBtn.disabled = true; // TS now knows .disabled exists
+}
+
+// 2. Type casting an API response when you're 100% sure of the structure
+// (Use carefully—a validation library like Zod is safer)
+interface ConfigData {
+    apiEndpoint: string;
+    retryCount: number;
+}
+const rawJSONStr = '{"apiEndpoint":"https://api.example.com","retryCount":3}';
+const appConfig = JSON.parse(rawJSONStr) as ConfigData;
+
+console.log(`Connecting to ${appConfig.apiEndpoint}...`);
 
 /**
  * COMMON MISTAKES
@@ -50,7 +68,6 @@ let z = (x as unknown) as number;
 // 3. Use the non-null assertion operator (!) on a variable that could be null.
 
 
-console.log("Lesson 15 Complete! 🚀");
 
 /**
  * --- SOLUTIONS ---

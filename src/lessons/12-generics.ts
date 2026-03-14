@@ -10,6 +10,8 @@ export {};
  * npm run lesson:12
  */
 
+console.log('lesson 12-generics');
+
 /**
  * Generics allow you to create components that work over a variety of types
  * rather than a single one. This allows for type-safe reusability.
@@ -27,18 +29,39 @@ let output2 = identity<number>(100);
 
 /**
  * FRONTEND EXAMPLE
+ * Generics power reusable UI components (like a Select dropdown that works with any object type)
+ * and type-safe data fetching hooks.
  */
+
+// 1. Generic API Response Wrapper
 interface ApiResponse<T> {
-    data: T;
+    data: T | null;
+    status: number;
     error: string | null;
 }
 
-interface User { name: string }
+interface UserProfile { id: string; name: string }
 
-const userResponse: ApiResponse<User> = {
-    data: { name: "Abdul" },
-    error: null
+const fetchUser = async (): Promise<ApiResponse<UserProfile>> => {
+    // Simulated fetch
+    return { data: { id: "u1", name: "Abdul" }, status: 200, error: null };
 };
+
+// 2. Generic React-like Component Props
+// A List component that can render an array of anything, provided it has an 'id'
+interface ListProps<ItemType extends { id: string | number }> {
+    items: ItemType[];
+    renderItem: (item: ItemType) => string; // Mocking returning a React node
+}
+
+const mockUsers = [{ id: 1, name: "Abdul" }, { id: 2, name: "Tunde" }];
+
+const UserList: ListProps<typeof mockUsers[0]> = {
+    items: mockUsers,
+    renderItem: (user) => `<li>${user.name}</li>`
+};
+
+console.log(UserList.renderItem(UserList.items[0]));
 
 /**
  * COMMON MISTAKES
@@ -65,7 +88,6 @@ function getLengthSafe<T extends { length: number }>(arg: T) {
 // 3. Create a generic function that takes an array of T and returns the first element.
 
 
-console.log("Lesson 12 Complete! 🚀");
 
 /**
  * --- SOLUTIONS ---

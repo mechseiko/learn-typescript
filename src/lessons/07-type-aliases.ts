@@ -10,6 +10,8 @@ export {};
  * npm run lesson:07
  */
 
+console.log('lesson 07-type-aliases');
+
 /**
  * Type aliases allow you to give a name to any type (primitive, object, or union).
  * This makes your code more readable and easier to maintain.
@@ -25,27 +27,34 @@ let productId: ID = 445;
 
 /**
  * FRONTEND EXAMPLE
+ * Type Aliases are the backbone of typing React props, Redux state slices,
+ * or API response payloads. They are often preferred over interfaces for unions.
  */
-type User = {
-    id: ID;
-    username: string;
-    email: string;
-    isActive: boolean;
-} | {
-    id: ID;
-    isAdmin: true
-}
+type AppTheme = "light" | "dark" | "system";
 
-const currentUser: User = {
-    id: 1,
-    username: "abdul_s",
-    email: "abdul@example.com",
-    isActive: true
+type ButtonProps = {
+    label: string;
+    theme: AppTheme;
+    isDisabled?: boolean;
+    onClick: () => void;
 };
-const adminUser: User = {
-    id: 1,
-    isAdmin: true
-};
+
+// A discriminative union for a complex state like Data Fetching
+type FetchState = 
+  | { status: "idle" }
+  | { status: "loading" }
+  | { status: "success", data: any[] }
+  | { status: "error", errorMsg: string };
+
+function renderUI(state: FetchState) {
+    switch(state.status) {
+        case "loading": return "Spinner...";
+        case "success": return `List of ${state.data.length} items`;
+        case "error":   return `Error: ${state.errorMsg}`;
+        default:        return "Ready";
+    }
+}
+console.log(renderUI({ status: "success", data: [1,2,3] }));
 
 /**
  * COMMON MISTAKES
@@ -65,8 +74,6 @@ type Point = { x: number; y: number };
 
 // 3. Create a complex 'Product' type alias with name, price, and an optional description.
 
-
-console.log("Lesson 07 Complete! 🚀");
 
 /**
  * --- SOLUTIONS ---

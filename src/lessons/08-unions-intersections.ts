@@ -10,6 +10,8 @@ export {};
  * npm run lesson:08
  */
 
+console.log('lesson 08-unions-intersections');
+
 /**
  * Unions (|) allow a value to be one of several types.
  * Intersections (&) combine multiple types into one.
@@ -34,18 +36,34 @@ const newWorker: Worker = {
 
 /**
  * FRONTEND EXAMPLE
+ * Intersections are great for composing complex component props (e.g., merging standard HTML
+ * attributes with custom component behavior).
+ * Unions are perfect for handling diverse states or configuration options.
  */
-type LoadingState = { state: "loading" };
-type SuccessState = { state: "success"; data: string[], logs: number[] };
-type ErrorState = { state: "error"; message: string };
 
-type NetworkState = LoadingState | SuccessState | ErrorState;
+// Intersection Example: Composing Props
+type StandardBoxProps = { width: number; height: number };
+type InteractiveProps = { onHover: () => void; onClick: () => void };
 
-function handleState(status: NetworkState) {
-    if (status.state === "success") {
-        console.log("Data:", status.data);
+type ClickableBoxProps = StandardBoxProps & InteractiveProps;
+
+const myBox: ClickableBoxProps = {
+    width: 100, height: 100,
+    onHover: () => console.log('Hovered'),
+    onClick: () => console.log('Clicked')
+};
+
+// Union Example: Component Variants
+type AlertVariant = "info" | "warning" | "error";
+
+function renderAlert(variant: AlertVariant, message: string) {
+    if (variant === "error") {
+        console.error(`🚨 ${message}`);
+    } else {
+        console.log(`ℹ️ [${variant.toUpperCase()}] ${message}`);
     }
 }
+renderAlert("warning", "Low disk space!");
 
 /**
  * COMMON MISTAKES
@@ -68,8 +86,6 @@ type C = A & B
 
 // 3. Create a variable that can be either a string or an array of strings.
 
-
-console.log("Lesson 08 Complete! 🚀");
 
 /**
  * --- SOLUTIONS ---

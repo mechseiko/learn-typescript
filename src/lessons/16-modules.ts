@@ -9,6 +9,8 @@
  * npm run lesson:16
  */
 
+console.log('lesson 16-modules');
+
 /**
  * TypeScript uses the same ES Module syntax as modern JavaScript (import/export).
  * You can export variables, functions, classes, and even interfaces/types.
@@ -31,10 +33,26 @@ export function greet(user: SharedUser) {
 
 /**
  * FRONTEND EXAMPLE
+ * In modern frontend development (React/Next.js), modules are used to separate
+ * Components, Hooks, Utils, and Types into their own files.
  */
-// Default exports are also supported
-const config = { api: "https://api.example.com" };
-export default config;
+// Example of a re-usable API utility
+export const fetchUserData = async (userId: string) => {
+    const res = await fetch(`/api/users/${userId}`);
+    return res.json();
+};
+
+// Example of exporting a React Component prop type
+export interface ButtonProps {
+    label: string;
+    onClick: () => void;
+}
+
+// Default export commonly used for the main Component in a file
+const Button = (props: ButtonProps) => {
+    console.log("Rendering Button:", props.label);
+};
+export default Button;
 
 /**
  * COMMON MISTAKES
@@ -54,8 +72,6 @@ export default config;
 
 // 3. Try importing a type from another (simulated) file using 'import type'.
 
-
-console.log("Lesson 16 Complete! 🚀");
 
 /**
  * --- SOLUTIONS ---

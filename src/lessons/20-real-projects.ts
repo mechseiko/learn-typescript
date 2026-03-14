@@ -10,6 +10,8 @@ export {};
  * npm run lesson:20
  */
 
+console.log('lesson 20-real-projects');
+
 /**
  * Real projects involve complex interfaces, global state, and strict configurations.
  * This final lesson brings together everything we've learned.
@@ -23,34 +25,49 @@ export {};
 // src/types/api.ts
 
 /**
- * FRONTEND EXAMPLE: A full feature implementation
+ * FRONTEND EXAMPLE: A full feature implementation (React Context / Custom Hook Style)
+ * Combining Interfaces, Context, and State Management.
  */
-interface Product {
-    id: string;
-    name: string;
-    price: number;
+interface UserSession {
+    token: string;
+    userId: string;
+    permissions: "read" | "write" | "admin";
 }
 
-interface CartItem extends Product {
-    quantity: number;
-}
+// 1. Discriminated Union for State
+type AuthState = 
+    | { status: "unauthenticated" }
+    | { status: "loading" }
+    | { status: "authenticated"; session: UserSession }
+    | { status: "error"; errorMessage: string };
 
-class ShoppingCart {
-    private items: CartItem[] = [];
+// 2. Action Types for a Reducer
+type AuthAction = 
+    | { type: "LOGIN_START" }
+    | { type: "LOGIN_SUCCESS"; payload: UserSession }
+    | { type: "LOGIN_FAILURE"; error: string }
+    | { type: "LOGOUT" };
 
-    addItem(product: Product) {
-        const existing = this.items.find(i => i.id === product.id);
-        if (existing) {
-            existing.quantity++;
-        } else {
-            this.items.push({ ...product, quantity: 1 });
-        }
+// 3. Reducer Function (Pure logic)
+function authReducer(state: AuthState, action: AuthAction): AuthState {
+    switch (action.type) {
+        case "LOGIN_START":
+            return { status: "loading" };
+        case "LOGIN_SUCCESS":
+            return { status: "authenticated", session: action.payload };
+        case "LOGIN_FAILURE":
+            return { status: "error", errorMessage: action.error };
+        case "LOGOUT":
+            return { status: "unauthenticated" };
+        default:
+            return state;
     }
-
-    getTotal(): number {
-        return this.items.reduce((acc, item) => acc + (item.price * item.quantity), 0);
-    }
 }
+
+// Example usage
+let currentState: AuthState = { status: "unauthenticated" };
+currentState = authReducer(currentState, { type: "LOGIN_START" });
+console.log("Current state:", currentState.status);
 
 /**
  * COMMON MISTAKES
@@ -71,7 +88,7 @@ class ShoppingCart {
 // 3. Final Boss Challenge: Design a simple Redux-like state management system with types.
 
 
-console.log("\nCongratulations! You've finished the 20-lesson TypeScript journey! 🎉🚀");
+
 
 /**
  * --- SOLUTIONS ---

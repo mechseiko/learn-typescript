@@ -10,6 +10,8 @@ export {};
  * npm run lesson:06
  */
 
+console.log('lesson 06-adv-functions');
+
 /**
  * Beyond basic types, you can define specific shapes for functions (Function Type Expressions)
  * and even describe multiple ways a function can be called (Overloads).
@@ -33,16 +35,26 @@ function throwError(msg: string): never {
 
 /**
  * FRONTEND EXAMPLE
+ * Function overloads are useful in UI libraries when a function's behavior changes dramatically
+ * based on the arguments provided (like a polymorphic component or utility function).
  */
-// Function Overloads
-function handleEvent(name: "click"): void;
-function handleEvent(name: "change", value: string): void;
-function handleEvent(name: string, value?: string): void {
-    console.log(`Event: ${name}, Value: ${value}`);
+function createStorage(type: "local"): Storage;
+function createStorage(type: "session"): Storage;
+function createStorage(type: "local" | "session"): Storage {
+    // In a real browser environment, this would return window.localStorage or window.sessionStorage
+    return type === "local" ? localStorage : sessionStorage;
 }
 
-handleEvent("click");
-handleEvent("change", "New input");
+// React Context / Higher Order Component mock
+type ComponentType = () => string;
+type HOC = (Wrapped: ComponentType) => ComponentType;
+
+const withLogging: HOC = (WrappedComponent) => {
+    return () => {
+        console.log("Component is rendering...");
+        return WrappedComponent();
+    };
+};
 
 /**
  * COMMON MISTAKES
@@ -64,8 +76,6 @@ function processValue(val: string): number {
 
 // 3. (Advanced) Try creating a simple function overload for a 'format' function (string or number input).
 
-
-console.log("Lesson 06 Complete! 🚀");
 
 /**
  * --- SOLUTIONS ---

@@ -11,6 +11,8 @@ export {};
  * npm run lesson:01
  */
 
+console.log('lesson 01-introduction');
+
 /**
  * TypeScript is a superset of JavaScript that adds "types". 
  * It helps catch errors during development before you even run your code.
@@ -28,11 +30,19 @@ let greeting: string = "Welcome to the course";
 
 /**
  * FRONTEND EXAMPLE
+ * In a real React application, you often use TypeScript to define the shape of your component props
+ * or variables to ensure the right data is passed.
  */
-const pageTitle: string = "TypeScript Learning Lab";
-const lessonCount: number = 20;
+const pageTitle: string = "Dashboard - User Profile";
+const unreadMessagesCount: number = 5;
+const isPremiumUser: boolean = true;
 
-console.log(`Welcome to ${pageTitle}. There are ${lessonCount} lessons to complete.`);
+function renderUserGreeting(title: string, messages: number, isPremium: boolean): string {
+  const badge = isPremium ? "🌟 PRO" : "Free";
+  return `[${badge}] ${title} | You have ${messages} unread messages.`;
+}
+
+console.log(renderUserGreeting(pageTitle, unreadMessagesCount, isPremiumUser));
 
 /**
  * COMMON MISTAKES
@@ -52,8 +62,6 @@ let age: number = 25;
 
 // 3. Create a variable called 'score' (number) and try assigning a string to see the error.
 
-
-console.log("Lesson 01 Complete! 🚀");
 
 /**
  * --- SOLUTIONS ---

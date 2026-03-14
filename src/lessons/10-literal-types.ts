@@ -10,6 +10,8 @@ export {};
  * npm run lesson:10
  */
 
+console.log('lesson 10-literal-types');
+
 /**
  * Literal types allow you to specify exactly what value a variable can hold,
  * which is incredibly useful for UI states, directions, or configurations.
@@ -24,14 +26,28 @@ direction = "up";
 
 /**
  * FRONTEND EXAMPLE
+ * Literal types perfectly model CSS properties, routing paths, or precise configuration values
+ * in frontend frameworks (e.g., Tailwind variants, standard CSS sizes).
  */
-type ButtonVariant = "primary" | "secondary" | "danger" | "ghost";
+type FlexAlign = "flex-start" | "center" | "flex-end" | "space-between";
+type Axis = "x" | "y";
 
-function getButtonClass(variant: ButtonVariant) {
-    return `btn-${variant}`;
+interface FlexContainerConfig {
+    direction: "row" | "column";
+    justify: FlexAlign;
+    alignItems: FlexAlign;
 }
 
-console.log(getButtonClass("primary"));
+const mainLayout: FlexContainerConfig = {
+    direction: "column",
+    justify: "space-between",
+    alignItems: "center"
+};
+
+function buildLayoutStyle(config: FlexContainerConfig) {
+    return `display: flex; flex-direction: ${config.direction}; justify-content: ${config.justify}; align-items: ${config.alignItems};`;
+}
+console.log(buildLayoutStyle(mainLayout));
 
 /**
  * COMMON MISTAKES
@@ -52,8 +68,6 @@ let currentMode: "light" | "dark" = "light";
 
 // 3. Create a function that accepts a 'Size' (S, M, L) and returns a number value.
 
-
-console.log("Lesson 10 Complete! 🚀");
 
 /**
  * --- SOLUTIONS ---

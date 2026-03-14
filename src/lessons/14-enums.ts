@@ -10,6 +10,8 @@ export {};
  * npm run lesson:14
  */
 
+console.log('lesson 14-enums');
+
 /**
  * Enums allow us to define a set of named constants. TypeScript supports both
  * numeric and string-based enums.
@@ -34,18 +36,37 @@ enum Status {
 
 /**
  * FRONTEND EXAMPLE
+ * Enums are useful for mapping internal states to UI values, routing paths,
+ * or managing distinct Application configurations.
  */
-enum UserRole {
-    Admin = "ADMIN",
-    Editor = "EDITOR",
-    Viewer = "VIEWER"
+enum AppRoute {
+    Home = "/",
+    Dashboard = "/dashboard",
+    Settings = "/settings",
+    Profile = "/profile"
 }
 
-function checkAccess(role: UserRole) {
-    if (role === UserRole.Admin) {
-        console.log("Full Access Granted");
+enum FetchStatus {
+    Idle,
+    Loading,
+    Success,
+    Error
+}
+
+function navigateTo(route: AppRoute) {
+    console.log(`Router navigation triggered for: ${route}`);
+}
+navigateTo(AppRoute.Dashboard);
+
+function renderButtonText(status: FetchStatus): string {
+    switch (status) {
+        case FetchStatus.Loading: return "Saving...";
+        case FetchStatus.Success: return "Saved!";
+        case FetchStatus.Error: return "Retry";
+        default: return "Save Changes";
     }
 }
+console.log(renderButtonText(FetchStatus.Loading));
 
 /**
  * COMMON MISTAKES
@@ -67,7 +88,6 @@ type AlternativeStatus = "active" | "inactive";
 // 3. Define a fruit enum and try to access its value by name.
 
 
-console.log("Lesson 14 Complete! 🚀");
 
 /**
  * --- SOLUTIONS ---

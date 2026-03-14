@@ -10,6 +10,8 @@ export {};
  * npm run lesson:02
  */
 
+console.log('lesson 02-basic-types');
+
 /**
  * TypeScript has all the primitive types you know from JavaScript, 
  * plus a few special ones like 'any' and 'unknown'.
@@ -26,14 +28,23 @@ let notSet: undefined = undefined;
 
 /**
  * FRONTEND EXAMPLE
+ * Handling API responses often requires dealing with 'unknown' or 'any' types initially.
+ * Here we demonstrate how to safely narrow types before using them in a UI component,
+ * such as rendering a user's display name or handling an error message from a fetch request.
  */
-// Using 'unknown' is safer than 'any' because it forces a type check.
-let apiData: unknown = "Some data from a server";
+let apiResponseData: unknown = { username: "mechseiko", isActive: true };
 
-if (typeof apiData === "string") {
-    console.log('apiData is a string', apiData.toUpperCase());
-} else if (typeof apiData === "number"){
-    console.log('apiData is a number')
+// In a real app, you might use a type guard or validation library (like Zod) here.
+if (
+  typeof apiResponseData === "object" &&
+  apiResponseData !== null &&
+  "username" in apiResponseData
+) {
+  // Now TypeScript knows that apiResponseData is an object with a username property
+  console.log(`Rendering UI for user: ${(apiResponseData as {username: string}).username}`);
+} else if (typeof apiResponseData === "string") {
+  // E.g., handling a raw error string from an API
+  console.error('API Error:', apiResponseData.toUpperCase());
 }
 
 /**
@@ -57,8 +68,6 @@ let safeId: unknown = 456;
 
 // 3. Create variables for null and undefined explicitly.
 
-
-console.log("Lesson 02 Complete! 🚀");
 
 /**
  * --- SOLUTIONS ---

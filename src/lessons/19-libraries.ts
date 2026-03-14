@@ -10,6 +10,8 @@ export {};
  * npm run lesson:19
  */
 
+console.log('lesson 19-libraries');
+
 /**
  * When using libraries like React, Lodash, or Express, you often need 
  * to install their type definitions separately via @types/library-name.
@@ -27,9 +29,26 @@ export {};
 
 /**
  * FRONTEND EXAMPLE
+ * In a React/Next.js app, you'll frequently use types provided by the framework
+ * to properly type your components or API routes.
  */
-// Typing a response from a generic library (like axios)
-// axios.get<User>("/api/user").then(res => res.data.name);
+// (Simulating a React import)
+// @ts-ignore
+import type { ReactNode, MouseEvent } from 'react';
+
+// Using types from a 3rd party library to type props
+interface LayoutProps {
+    children: ReactNode;
+}
+
+function Layout({ children }: LayoutProps) {
+    // Render logic
+}
+
+function onClickHandler(e: MouseEvent<HTMLButtonElement>) {
+    e.preventDefault(); // TypeScript knows 'e' is a MouseEvent with preventDefault
+    console.log("Button clicked!");
+}
 
 /**
  * COMMON MISTAKES
@@ -50,7 +69,7 @@ export {};
 // 3. (Thought Experiment) How would you handle a library that doesn't have @types available?
 
 
-console.log("Lesson 19 Complete! 🚀");
+
 
 /**
  * --- SOLUTIONS ---

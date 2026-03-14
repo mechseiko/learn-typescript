@@ -10,6 +10,8 @@ export {};
  * npm run lesson:17
  */
 
+console.log('lesson 17-classes');
+
 /**
  * TypeScript adds type safety and modifiers like 'private' and 'protected' 
  * to standard JavaScript classes.
@@ -32,25 +34,36 @@ class Greeter {
 
 /**
  * FRONTEND EXAMPLE
+ * Classes are often used in frontend development for state management (like MobX stores),
+ * API service singletons, or encapsulating complex business logic outside of UI components.
  */
-interface Printable {
-    print(): void;
+interface ApiServiceConfig {
+    baseUrl: string;
+    timeout: number;
 }
 
-class Logger implements Printable {
-    private prefix: string; // Only accessible inside this class
+class ApiService {
+    private readonly config: ApiServiceConfig;
+    public isActive: boolean = true;
 
-    constructor(prefix: string) {
-        this.prefix = prefix;
+    constructor(config: ApiServiceConfig) {
+        this.config = config;
     }
 
-    public print() { // Accessible from everywhere
-        console.log(`${this.prefix}: Outputting log...`);
+    // Protected methods can be accessed by subclasses (e.g., UserService extends ApiService)
+    protected logRequest(endpoint: string) {
+        console.log(`[HTTP GET] ${this.config.baseUrl}${endpoint} (Timeout: ${this.config.timeout}ms)`);
+    }
+
+    public async get(endpoint: string) {
+        this.logRequest(endpoint);
+        // actual fetch logic would go here
+        return { success: true };
     }
 }
 
-const myLogger = new Logger("SYSTEM");
-myLogger.print();
+const userApi = new ApiService({ baseUrl: "https://api.app.com", timeout: 5000 });
+userApi.get("/users/1");
 
 /**
  * COMMON MISTAKES
@@ -77,7 +90,7 @@ const p = new Point(10);
 // 3. Implement an interface 'Movable' (with a move() method) in a 'Robot' class.
 
 
-console.log("Lesson 17 Complete! 🚀");
+
 
 /**
  * --- SOLUTIONS ---

@@ -10,6 +10,8 @@ export {};
  * npm run lesson:03
  */
 
+console.log('lesson 03-arrays-tuples');
+
 /**
  * Arrays can be restricted to specific types. 
  * Tuples are arrays with a fixed number of elements and specific types at each position.
@@ -26,16 +28,35 @@ let person: [string, number] = ["Alice", 25];
 
 /**
  * FRONTEND EXAMPLE
+ * Arrays are crucial for rendering lists of UI elements (e.g., in React: `users.map(...)`).
+ * Tuples are often used in hooks, like React's `useState`, which returns exactly `[state, setState]`.
  */
-type User = { id: number; name: string };
-const users: User[] = [
-    { id: 1, name: "Ada" },
-    { id: 2, name: "Tunde" }
+type Product = { id: string; title: string; price: number };
+
+// 1. Array of Objects for a Shopping Cart UI
+const cartItems: Product[] = [
+    { id: "p1", title: "Mechanical Keyboard", price: 150 },
+    { id: "p2", title: "Ergonomic Mouse", price: 80 }
 ];
 
-// Readonly arrays prevent mutations
-const colors: readonly string[] = ["red", "green"];
-// colors.push("blue"); // ❌ Error
+function renderCart(items: Product[]) {
+    items.forEach(item => console.log(`- ${item.title}: $${item.price}`));
+}
+renderCart(cartItems);
+
+// 2. Tuple representing a simple [state, setter] pattern (like useState)
+type StateSetter<T> = (newValue: T) => void;
+let hookState: [boolean, StateSetter<boolean>] = [
+    false, 
+    (val) => { console.log(`State updated to ${val}`) }
+];
+
+const [isModalOpen, setIsModalOpen] = hookState;
+setIsModalOpen(true);
+
+// Readonly arrays prevent mutations - useful for Redux state or config data
+const activeThemes: readonly string[] = ["light", "dark"];
+// activeThemes.push("system"); // ❌ Error
 
 /**
  * COMMON MISTAKES
@@ -55,8 +76,6 @@ let items: string[] = ["apple", "banana"];
 
 // 3. Create an array of strings and try to push a number into it.
 
-
-console.log("Lesson 03 Complete! 🚀");
 
 /**
  * --- SOLUTIONS ---

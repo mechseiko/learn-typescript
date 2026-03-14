@@ -10,6 +10,8 @@ export {};
  * npm run lesson:05
  */
 
+console.log('lesson 05-functions');
+
 /**
  * Functions are the core of logic. 
  * TS ensures you pass the right arguments and use the return value correctly.
@@ -26,13 +28,23 @@ function add(a: number, b: number): number {
 
 /**
  * FRONTEND EXAMPLE
+ * Functions are used for component rendering, event handling, and data fetching.
+ * Below is an example of an event handler function typed for a button click.
  */
-function formatPrice(price: number, currency: string = "$"): string {
-    return `${currency}${price.toFixed(2)}`;
+type ButtonVariant = "primary" | "secondary" | "danger";
+
+function createButton(label: string, variant: ButtonVariant, onClick: (event: string) => void) {
+    console.log(`Creating [${variant.toUpperCase()}] button: ${label}`);
+    
+    // Simulating a click event
+    const fakeEventMessage = `Clicked at ${new Date().toISOString()}`;
+    onClick(fakeEventMessage);
 }
 
-console.log(formatPrice(19.99));
-console.log(formatPrice(10, "£"));
+// Pass an arrow function that matches the (event: string) => void signature
+createButton("Delete Account", "danger", (eventDetails) => {
+    console.warn("User attempted to delete account.", eventDetails);
+});
 
 /**
  * COMMON MISTAKES
@@ -53,8 +65,6 @@ function greet(name: string) {
 
 // 3. Create a function that checks if a user is logged in (receives boolean, returns string).
 
-
-console.log("Lesson 05 Complete! 🚀");
 
 /**
  * --- SOLUTIONS ---
